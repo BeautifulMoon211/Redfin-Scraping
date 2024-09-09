@@ -1,7 +1,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-const REDFIN_PAGE_URL = 'https://www.redfin.com/city/5155/CO/Denver/apartments-for-rent';
+const REDFIN_PAGE_URL = 'https://www.redfin.com/city/12839/DC/Washington-DC/apartments-for-rent';
 const API_URL = 'https://api.scraperapi.com';
 const API_KEY = '5895fb6ca5cef34e820cca3250e1ef0b' // <--- Enter your API key here
 
@@ -32,8 +32,7 @@ const webScraper = async () => {
             const link = $(el).find('.link-and-anchor.visuallyHidden').attr('href');
             const linkText = $(el).find('.link-and-anchor.visuallyHidden').text();
             const contact = $(el).find('.RentalCTAContact__button--phone .ButtonLabel').text();
-            // const title = $(el).find('.chakra-heading css-xmh85b')
-
+            
             if (!price) {
                 return
             }
