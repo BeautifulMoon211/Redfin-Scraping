@@ -1,7 +1,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-const REDFIN_PAGE_URL = 'https://www.redfin.com/city/12839/DC/Washington-DC/apartments-for-rent';
+const REDFIN_PAGE_URL = 'https://www.redfin.com/city/12839/DC/Washington-DC';
 const API_URL = 'https://api.scraperapi.com';
 const API_KEY = '5895fb6ca5cef34e820cca3250e1ef0b' // <--- Enter your API key here
 
@@ -22,7 +22,9 @@ const webScraper = async () => {
         console.log('Extracting information from the HTML...');
 
         $(".HomeCardContainer").each((_, el) => {
-            const price = $(el).find('.bp-Homecard__Price--value span').text();
+            const price = $(el).find('.bp-Homecard__Price--value.span') > 0 ? 
+                $(el).find('.bp-Homecard__Price--value.span').text() : 
+                $(el).find('.bp-Homecard__Price--value').text();
             const beds = $(el).find('.bp-Homecard__Stats--beds.text-nowrap').text();
             const bath = $(el).find('.bp-Homecard__Stats--baths.text-nowrap').text();
             const space = $(el).find('.bp-Homecard__LockedStat--value').text();
