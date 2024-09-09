@@ -14,16 +14,9 @@ const webScraper = async () => {
         console.log('Extracting information from the HTML...');
 
         $(".chakra-text.css-1dkoegt").each((_, el) => {
-            const spans = $(el).find('span');  
-            if (spans.length > 0) {  
-                // If there are span elements, push their text  
-                spans.each((_, span) => {  
-                    propertyList.push($(span).text().trim());  
-                });  
-            } else {  
-                // If no span elements, push the text of the parent element  
-                propertyList.push($(el).text().trim());  
-            }  
+            $(el).find('span') > 0 ? spans.each(
+                (_, span) => { propertyList.push($(span).text().trim()); }
+            ) : propertyList.push($(el).text().trim());
         });
 
     } catch (error) {
