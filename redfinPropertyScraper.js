@@ -55,3 +55,4 @@ const redfinPropertyScraper = async (API_KEY, REDFIN_PAGE_URL) => {
 };
 
 module.exports = redfinPropertyScraper;
+// Reference: https://hasdata.com/blog/how-to-scrape-redfin-data, https://www.scraperapi.com/blog/scrape-redfin/
