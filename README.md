@@ -92,7 +92,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 <h3>
     If you found this project useful or interesting, please consider giving it a 
-    <a href="https://github.com/BeautifulMoon211/Yelp-Scraping">
+    <a href="https://github.com/BeautifulMoon211/Redfin-Scraping">
         <img src="https://raw.githubusercontent.com/HighAmbition211/HighAmbition211/refs/heads/auxiliary/others/star.gif" style="width:25px"> 
         Star
     </a>, or 
